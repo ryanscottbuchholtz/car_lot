@@ -1,0 +1,8 @@
+<%= simple_form_for(car) do |f| %>
+
+<%= f.input :color, label: 'Color' %><br>
+<%= f.input :mileage, label: 'Mileage' %><br>
+<%= f.input :year, label: 'Year' %><br>
+<%= f.input :description, as: :text, input_html: {cols: 50, rows: 5}, label: 'Description' %><br>
+<%= f.button :submit, 'Create new Car record' %>
+<% end %>
