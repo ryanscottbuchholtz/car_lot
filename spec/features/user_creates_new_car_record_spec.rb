@@ -50,4 +50,18 @@ describe 'a user records a newly acquired car', %q{
     end
   end
 
+  context 'incomplete information is provided' do
+    it 'throws an error with color, year, and mileage are not included' do
+
+      visit new_car_path
+      click_on 'Create new Car record'
+
+      expect(page).to have_content 'Color must be supplied'
+      expect(page).to have_content 'Mileage must be supplied'
+      expect(page).to have_content 'Year must be supplied'
+      expect(page).to_not have_content 'Congratulations.  Your car has been saved!'
+
+    end
+  end
+
 end
